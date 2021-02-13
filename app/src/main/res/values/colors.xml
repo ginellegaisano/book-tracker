@@ -19,5 +19,6 @@
     <color name="grey_800">#424242</color>
     <color name="grey_900">#212121</color>
 
-    <color name="primary_font">@color/grey_900</color>
+    <color name="color_tab_text">@color/grey_400</color>
+    <color name="color_tab_text_selected">@color/grey_50</color>
 </resources>

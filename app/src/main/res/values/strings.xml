@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">booktracker</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="app_name">Book Tracker</string>
+    <string name="tab_reading">Reading</string>
+    <string name="tab_lists">Lists</string>
+    <string name="tab_stats">Stats</string>
+
+    <string name="reading_list_title">Currently Reading:</string>
+
 </resources>
