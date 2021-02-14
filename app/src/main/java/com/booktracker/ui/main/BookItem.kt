@@ -18,7 +18,7 @@ class BookItem(context: Context, attrs: AttributeSet) : LinearLayout(context, at
         author = findViewById(R.id.author)
     }
 
-    public fun setBook(book: Book) {
+    fun setBook(book: Book) {
         title.text = book.title
         author.text = book.author
     }
