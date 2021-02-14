@@ -4,19 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.booktracker.R
 import com.booktracker.models.Book
 
-/**
- * A placeholder fragment containing a simple view.
- */
+/** Displays current reading list. */
 class ReadingFragment : Fragment() {
 
-    private val TEST_BOOK = Book("Snow Flower and the Paper Fan", "Lisa See", 5)
+    // TODO: replace with reading list from SQL Lite DB.
+    private val TEST_BOOKS = listOf(
+        Book("Snow Flower and the Paper Fan", "Lisa See", 5),
+        Book("Winter", "Marissa Meyer", 4)
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +29,13 @@ class ReadingFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_reading, container, false)
 
-        (root.findViewById(R.id.test_book) as BookItem).setBook(TEST_BOOK)
+        val adapter = BookItemAdapter(TEST_BOOKS)
+        val bookList: RecyclerView = root.findViewById(R.id.book_list)
+        bookList.apply {
+            layoutManager = LinearLayoutManager(activity)
+            this.adapter = adapter
+        }
+
         return root
     }
 }
